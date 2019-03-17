@@ -5,9 +5,16 @@
 [![Documentation Status](https://readthedocs.org/projects/dffr/badge/?version=latest)](https://dffr.readthedocs.io/en/latest/?badge=latest)
 
 # dffr
-
 The package helps you to find a difference between two mutable Python types.
 
+## Kick start
+Just simply install the package from PyPi:
+```bash
+pip install dffr
+```
+
+## Next steps
+Associate the package from a Python console:
 ```python
 >>> from dffr.utils import find_diff
 >>> find_diff({'a': 1}, {'a': 1, 'b': 2})
