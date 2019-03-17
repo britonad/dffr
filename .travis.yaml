@@ -1,0 +1,15 @@
+language: python
+python:
+  - "3.6"
+install:
+  - pip install coveralls
+  - pip install codacy-coverage
+  - pip install pytest
+script:
+  - |
+     coverage run --source=dffr -m pytest . -v && \
+     coverage report && \
+     coverage xml && \
+     python-codacy-coverage -r coverage.xml
+after_success:
+  - coveralls
