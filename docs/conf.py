@@ -174,5 +174,12 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
+html_theme_options = {
+    'logo': 'logo.png',
+    'github_user': 'vald-phoenix',
+    'github_repo': 'dffr',
+    'github_banner': True,
+    'github_type': 'star'
+}
 
 # -- Extension configuration -------------------------------------------------
