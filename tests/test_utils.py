@@ -1,19 +1,12 @@
-from collections import defaultdict
+import doctest
+import unittest
 
-from dffr.utils import make_dict_vals_hashable, make_hashable_list, find_diff
-
-
-def test_make_dict_vals_hashable():
-    data = {'a': [1, 2], 'b': {'x': 2}}
-    expected = {'a': (1, 2), 'b': (('x', 2),)}
-    assert make_dict_vals_hashable(data) == expected
+from dffr import utils
 
 
-def test_make_hashable_list():
-    assert make_hashable_list([1, 2, [3, 4]]) == (1, 2, (3, 4))
+def test_doctest_suit():
+    test_suit = unittest.TestSuite()
+    test_suit.addTest(doctest.DocTestSuite(utils))
+    result = unittest.TextTestRunner(verbosity=2).run(test_suit)
 
-
-def test_find_diff():
-    old = {'a': 1}
-    new = {'a': 1, 'b': 2}
-    assert find_diff(old, new) == defaultdict(list, {'b': [2]})
+    assert not result.failures
